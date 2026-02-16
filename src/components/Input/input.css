@@ -1,0 +1,19 @@
+.input-field {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  width: min-content;
+}
+
+.clear-btn {
+  cursor: pointer;
+}
+
+.password-btn {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
