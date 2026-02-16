@@ -8,16 +8,20 @@ export interface ToastProps {
   message?: string;
 }
 export const Toast = ({ duration = 2000, type = 'info', message }: ToastProps) => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   function onClose() {
     setVisible(false);
   }
   useEffect(() => {
+    const showToast = requestAnimationFrame(() => setVisible(true));
     const timer = setTimeout(() => {
       onClose();
     }, duration);
-    return () => clearTimeout(timer);
+    return () => {
+      cancelAnimationFrame(showToast);
+      clearTimeout(timer);
+    };
   }, [duration]);
 
   return (

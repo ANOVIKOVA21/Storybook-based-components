@@ -2,14 +2,12 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  gap: 5px;
   padding: 10px 5px;
   max-width: min-content;
   min-width: 200px;
   right: 10px;
   bottom: 10vh;
   border-radius: 10px;
-  transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -28,23 +26,21 @@
 .toast.visible {
   opacity: 1;
   transform: translateY(0);
-
-}
-
-.message {
-  margin: 0;
 }
 
 .toast.invisible {
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
+}
 
+.message {
+  margin: 0;
 }
 
 .close-btn {
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 5%;
   border: 0;
   background: none;
