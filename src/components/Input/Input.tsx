@@ -26,6 +26,7 @@ export const Input = ({ clearable = true, type = 'password' }: InputProps) => {
     <div className="input-field">
       <input
         type={inputType}
+        name={inputType}
         className="input"
         value={value}
         placeholder={`Enter your ${inputType}`}
