@@ -14,7 +14,7 @@ export const Info: Story = {
     duration: 2000,
     type: 'info',
     message: 'Notification',
-    closeBtn: false,
+    closeBtn: true,
   },
 };
 export const Error: Story = {
