@@ -33,3 +33,11 @@ export const Success: Story = {
     closeBtn: true,
   },
 };
+export const InfoWithoutClose: Story = {
+  args: {
+    duration: 2000,
+    type: 'info',
+    message: 'Notification',
+    closeBtn: false,
+  },
+};

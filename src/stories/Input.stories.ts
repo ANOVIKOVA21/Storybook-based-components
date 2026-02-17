@@ -27,3 +27,9 @@ export const Number: Story = {
     clearable: true,
   },
 };
+export const NumberNotClearable: Story = {
+  args: {
+    type: 'number',
+    clearable: false,
+  },
+};
