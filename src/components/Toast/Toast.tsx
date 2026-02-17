@@ -6,8 +6,14 @@ export interface ToastProps {
   duration?: number;
   type?: 'success' | 'error' | 'info';
   message?: string;
+  closeBtn: boolean;
 }
-export const Toast = ({ duration = 2000, type = 'info', message }: ToastProps) => {
+export const Toast = ({
+  duration = 2000,
+  type = 'info',
+  message,
+  closeBtn = true,
+}: ToastProps) => {
   const [visible, setVisible] = useState(false);
 
   function onClose() {
@@ -27,9 +33,11 @@ export const Toast = ({ duration = 2000, type = 'info', message }: ToastProps) =
   return (
     <div className={`toast toast-${type}  ${visible ? 'visible' : 'invisible'}`}>
       <p className="message">{message}</p>
-      <button type="button" className="close-btn" onClick={onClose}>
-        x
-      </button>
+      {closeBtn && (
+        <button type="button" className="close-btn" onClick={onClose}>
+          x
+        </button>
+      )}
     </div>
   );
 };

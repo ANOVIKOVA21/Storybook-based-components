@@ -14,6 +14,7 @@ export const Info: Story = {
     duration: 2000,
     type: 'info',
     message: 'Notification',
+    closeBtn: false,
   },
 };
 export const Error: Story = {
@@ -21,12 +22,14 @@ export const Error: Story = {
     duration: 3000,
     type: 'error',
     message: 'Error',
+    closeBtn: true,
   },
 };
 export const Success: Story = {
   args: {
-    duration: 2000,
+    duration: 1500,
     type: 'success',
     message: 'Success!',
+    closeBtn: true,
   },
 };
