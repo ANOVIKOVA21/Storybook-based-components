@@ -8,7 +8,7 @@ export interface MenuItem {
 }
 
 export interface SidebarMenuProps {
-  state?: 'opened' | 'closed';
+  state?: 'open' | 'closed';
   items?: MenuItem[];
   onClose?: () => void;
 }
@@ -33,18 +33,20 @@ const MenuItems = ({ items }: { items: MenuItem[] }) => (
 );
 
 export const SidebarMenu = ({
-  state = 'opened',
+  state = 'open',
   items = [],
   onClose,
 }: SidebarMenuProps) => {
   return (
     <>
-      {state === 'opened' && <div className="overlay" onClick={onClose} />}
+      {state === 'open' && <div className="overlay" onClick={onClose} />}
       <aside className={`sidebar ${state}`} aria-label="Sidebar menu">
-        <button className="close-btn" onClick={onClose}>
+        <button type="button" className="close-btn" onClick={onClose}>
           ×
         </button>
-        <MenuItems items={items} />
+        <nav className="navigation">
+          <MenuItems items={items} />
+        </nav>
       </aside>
     </>
   );

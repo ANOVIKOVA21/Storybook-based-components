@@ -10,9 +10,9 @@ const meta: Meta<typeof SidebarMenu> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Opened: Story = {
+export const Open: Story = {
   args: {
-    state: 'opened',
+    state: 'open',
     items: [{ label: 'Home' }, { label: 'About' }, { label: 'Contact' }],
     onClose: fn(),
   },
@@ -26,11 +26,11 @@ export const Closed: Story = {
 };
 export const OneLevel: Story = {
   render: () => {
-    const [state, setState] = useState<'opened' | 'closed'>('closed');
+    const [state, setState] = useState<'open' | 'closed'>('closed');
 
     return (
       <>
-        <button onClick={() => setState('opened')}>Open Menu</button>
+        <button onClick={() => setState('open')}>Open Menu</button>
         <SidebarMenu
           state={state}
           items={[{ label: 'Home' }, { label: 'About' }, { label: 'Contact' }]}
@@ -43,11 +43,11 @@ export const OneLevel: Story = {
 
 export const TwoLevel: Story = {
   render: () => {
-    const [state, setState] = useState<'opened' | 'closed'>('closed');
+    const [state, setState] = useState<'open' | 'closed'>('closed');
 
     return (
       <>
-        <button onClick={() => setState('opened')}>Open Menu</button>
+        <button onClick={() => setState('open')}>Open Menu</button>
         <SidebarMenu
           state={state}
           items={[
