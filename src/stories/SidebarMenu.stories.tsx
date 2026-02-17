@@ -4,7 +4,7 @@ import { fn } from 'storybook/test';
 import { SidebarMenu } from '../components/SidebarMenu/SidebarMenu';
 
 const meta: Meta<typeof SidebarMenu> = {
-  title: 'SidebarMenu',
+  title: 'Navigation/SidebarMenu',
   component: SidebarMenu,
 };
 export default meta;

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Toast } from '../components/Toast/Toast';
 
 const meta: Meta<typeof Toast> = {
-  title: 'Toast',
+  title: 'Feedback/Toast',
   component: Toast,
 };
 export default meta;
