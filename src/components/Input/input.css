@@ -10,10 +10,17 @@
 }
 
 .password-btn {
+  display: block;
+  width: 2rem;
+  height: 1.5rem;
   position: absolute;
   top: 0;
   right: 30px;
   border: 0;
   background: none;
   cursor: pointer;
+}
+
+.icon {
+  width: 100%;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import eyeIcon from '../../assets/eye.svg';
+import closedEyeIcon from '../../assets/eye_closed.svg';
 import './input.css';
 
 export interface InputProps {
@@ -7,7 +8,7 @@ export interface InputProps {
   type?: string;
 }
 
-export const Input = ({ clearable = true, type = 'password', ...props }: InputProps) => {
+export const Input = ({ clearable = true, type = 'password' }: InputProps) => {
   const [value, setValue] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const inputType = type === 'password' && showPassword ? 'text' : type;
@@ -27,12 +28,16 @@ export const Input = ({ clearable = true, type = 'password', ...props }: InputPr
         type={inputType}
         className="input"
         value={value}
-        {...props}
+        placeholder={`Enter your ${inputType}`}
         onChange={(event) => handleInput(event.target.value)}
       />
       {type === 'password' && value && (
         <button type="button" className="password-btn" onClick={togglePassword}>
-          {showPassword ? '🙈' : '👁️'}
+          {showPassword ? (
+            <img src={closedEyeIcon} className="icon" alt="closed eye icon" />
+          ) : (
+            <img src={eyeIcon} className="icon" alt="eye icon" />
+          )}
         </button>
       )}
       {clearable && value && (
